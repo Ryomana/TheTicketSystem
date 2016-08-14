@@ -1,0 +1,24 @@
+﻿<form name="requestsForm"
+      ng-controller="ttsRequests"
+      ng-show="loaded">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Request Id</th>
+                <th>Name</th>
+                <th>Server Url</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="request in requestList">
+            <tr>
+                <td>{{request.Id}}</td>
+                <td>{{request.Name}}</td>
+                <td>{{request.Url}}</td>
+                <td><button name="accept" class="btn btn-success" ng-click="accept(request.Id)">Accept</button> <button name="decline" class="btn btn-danger" ng-click="decline(request.Id)">Decline</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>

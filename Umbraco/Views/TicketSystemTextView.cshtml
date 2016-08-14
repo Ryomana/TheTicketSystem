@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TicketSystemTextView>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Core.TheTicketSystem.Objects;
+@{
+	Layout = "Master.cshtml";
+	var ticketId = 1;
+	
+	TicketApiController tc = new TicketApiController();
+	Ticket ticket = tc.GetById(ticketId);
+	
+	TicketTextApiController ttc = new TicketTextApiController();
+	var ticketTextList = ttc.GetByTicketId(ticketId);
+}
+
+<div>
+	<div>
+		<h1>@ticket.Subject</h1>
+	</div>
+	<div>
+		@foreach (var ticketText in ticketTextList) {
+			<div>
+				<span class="panel-heading">Author: </span>
+				<span class="input-sm">Create Date: </span>
+				<textarea readonly="readonly" class="form-control">@ticketText.Text</textarea>
+			</div>
+		}
+		<div>
+			<label for="newText" class="form-control">Answer:</label>
+			<textarea id="newText" class="form-control"></textarea>
+		</div>
+    	<button type="submit" class="btn btn-success">Save</button>
+	</div>
+</div>

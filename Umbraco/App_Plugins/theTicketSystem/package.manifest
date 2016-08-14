@@ -1,0 +1,18 @@
+﻿{
+	javascript: [
+		'~/App_Plugins/theTicketSystem/backoffice/client.resource.js',
+		'~/App_Plugins/theTicketSystem/backoffice/ticket.resource.js',
+		'~/App_Plugins/theTicketSystem/backoffice/requests.resource.js',
+        '~/App_Plugins/theTicketSystem/backoffice/status.resource.js',
+		'~/App_Plugins/theTicketSystem/backoffice/ticketText.resource.js',
+		'~/App_Plugins/theTicketSystem/backoffice/customUserService.resource.js',
+		'~/App_Plugins/theTicketSystem/backoffice/clientsTree/editController.js',
+		'~/App_Plugins/theTicketSystem/backoffice/clientsTree/ticketController.js',
+		'~/App_Plugins/theTicketSystem/backoffice/TheTicketSystemConfiguration.resource.js',
+		'~/App_Plugins/theTicketSystem/theTicketSystemDashboardController.js',
+		'~/App_Plugins/theTicketSystem/theTicketSystemRequestsDashboard.js'
+	],
+	css: [
+		'~/css/bootstrap.min.css'
+	]
+}

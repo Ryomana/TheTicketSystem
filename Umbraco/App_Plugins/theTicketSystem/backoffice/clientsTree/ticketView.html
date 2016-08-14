@@ -1,0 +1,36 @@
+﻿<form name="ticketTextForm"
+     ng-controller="ticketController"
+     ng-show="loaded"
+     ng-submit="save(ticketText)"
+     class="form-group"
+     val-form-manager>
+    <umb-panel>
+        <umb-header>
+            <div class="span3">
+                <h3>Subject: {{ticket.Subject}}</h3>
+                <span>Owner: {{ticketOwner.Name}}</span>
+            </div>
+        </umb-header>
+        <div class="umb-panel-body pull-right umb-btn-toolbar"">
+            <div id="content">
+                <!-- Status -->
+                <label for="status">Status: </label>
+                <select id="status">
+                    <option ng-repeat="status in statusList" value="{{status.Id}}">{{status.Name}}</option>
+                </select>
+
+                <!-- Here comes the generated Texts out of the db-->
+                <div ng-repeat="text in textList">
+                    <span class="panel-heading">Author: {{text.author}}</span>
+                    <span class="input-sm">Create Date: {{text.createTS}}</span>
+                    <textarea id="text{{text.Id}}" readonly="readonly" class="form-control">{{text.Text}}</textarea>
+                </div>
+            </div>
+            <div>
+                <label for="newText" class="form-control">Answer:</label>
+                <textarea id="newText" ng-model="ticketText.Text" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+</umb-panel>
+</form>

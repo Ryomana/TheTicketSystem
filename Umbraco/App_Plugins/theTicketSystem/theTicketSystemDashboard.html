@@ -1,0 +1,39 @@
+﻿<form name="configForm" 
+      ng-controller="ttsDashboardController"
+      ng-show="loaded"
+      ng-submit="save()"
+      val-form-manager>
+
+    <div id="instanceConfig" class="panel panel-info">
+        <div class="panel-heading">
+            TheTicketSystem instance settings
+        </div>
+        <div class="panel-body">
+            <label class="col-lg-5">
+                <input id="isServer" type="checkbox" /> Server
+            </label>
+            <label class="col-lg-5">
+                <input id="isClient" type="checkbox" /> Client
+            </label>
+        </div>
+    </div>
+
+    <div id="serverSettings" class="panel panel-info">
+        <div class="panel-heading">
+            Server Settings
+        </div>
+        <div class="panel-body form-group">
+            <label for="serverUrl">Server url: </label>
+            <input id="serverUrl" type="text" class="form-control" ng-model="serverUrl" value="{{serverUrl}}"/><br />
+
+            <label for="username">Username: </label>
+            <input id="username" type="text" class="form-control" ng-model="username" value="{{username}}" />
+
+            <label for="password">Password: </label>
+            <input id="password" type="password" class="form-control" ng-model="password" value="{{password}}" />
+        </div>
+    </div>
+
+    <button type="submit" id="saveButton" class="btn btn-success">Save</button>
+
+</form>

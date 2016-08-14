@@ -1,0 +1,38 @@
+﻿<form name="clientForm"
+      ng-controller="Clients.ClientEditController"
+      ng-show="loaded"
+      ng-submit="save(client)"
+      val-form-manager>
+    <umb-panel>
+        <umb-header>
+            <div class="span7">
+                <umb-content-name ng-model="client.Name" class="h2" />
+
+            </div>
+        </umb-header>
+
+        <div class="umb-panel-body umb-scrollable row-fluid">
+            <div class="tab-content form-horizontal" style="padding-bottom: 90px">
+                <div class="umb-pane">
+                        <table border="1" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Ticket Id</th>
+                                    <th>Ticket Subject</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ticket in tickets" name="line" ng-href="./ticketView.html" ng-click="showTicket({{ticket.Id}})">
+                                    <td>{{ticket.Id}}</td>
+                                    <td>{{ticket.Subject}}</td>
+                                    <td>{{ticket.Status}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </umb-panel>
+</form>
